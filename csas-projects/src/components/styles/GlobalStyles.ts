@@ -6,5 +6,6 @@ export const GlobalStyles = createGlobalStyle`
         padding: 0;
         background-color: #e2e8f0;
         height: 100vh;
+        font-family: "Roboto";
     }
 `;
