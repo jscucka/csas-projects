@@ -11,7 +11,7 @@ export const StyledNavBar = styled.nav`
   }
   a {
     text-decoration: none;
-    color: #93c5fd;
+    color: #60a5fa;
   }
   a.active {
     color: #2563eb;
