@@ -3,31 +3,76 @@ import styled from "styled-components";
 export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  width: 50%;
-  height: 20rem;
+  align-items: center;
+  width: 80%;
   margin: 2% auto;
-  background-color: white;
-  padding: 2%;
-  border-bottom-right-radius: 0.375rem; /* 6px */
-  border-bottom-left-radius: 0.375rem; /* 6px */
+  background-color: #f9f9f9;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+
+  @media (max-width: 768px) {
+    width: 90%;
+    padding: 1rem;
+  }
 `;
+
 export const StyledLabel = styled.label`
-  color: #2563eb;
+  color: #444444;
   margin-bottom: 0.5rem;
+  font-size: 1rem;
 `;
-export const StyledInput = styled.input`
+
+export const StyledInput = styled.input<{ hasError: boolean }>`
   margin-bottom: 2rem;
+  border: 1px solid ${(props) => (props.hasError ? "#ff4f4f" : "#dddddd")};
+  height: 3rem;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+
+  &:focus {
+    border-color: #0077b6;
+    box-shadow: 0 0 0 2px #0077b6;
+  }
+
+  &:invalid {
+    border-color: #ff4f4f;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
+
 export const StyledButton = styled.button`
-  background-color: #3b82f6;
-  width: 5rem;
-  border-radius: 9999px;
-  padding: 1%;
-  color: white;
-  border-color: #3b82f6;
-  box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
-  :hover {
+  background-color: #0077b6;
+  width: 100%;
+  max-width: 12rem;
+  height: 3.5rem;
+  border-radius: 0.5rem;
+  padding: 0.75rem 2rem;
+  color: #ffffff;
+  border: none;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #008cba;
     cursor: pointer;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #008cba;
+  }
+
+  @media (max-width: 768px) {
+    max-width: 100%;
   }
 `;

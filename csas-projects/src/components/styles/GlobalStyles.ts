@@ -4,8 +4,11 @@ export const GlobalStyles = createGlobalStyle`
     body {
         margin: 0;
         padding: 0;
-        background-color: #e2e8f0;
-        height: 100vh;
-        font-family: "Roboto";
+        background-color: #f9fafb;
+        min-height: 100vh;
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #333;
     }
 `;
