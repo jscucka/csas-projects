@@ -10,11 +10,15 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ErrorMessage } from "./ErrorMessage";
 import { formSchema } from "../utils/formSchema";
-const submitData = (data: FormSchema) => {
-  console.log("Data: ", data);
-};
+import { NameContext } from "./context/NameContext";
+import { useContext } from "react";
 type FormSchema = z.infer<typeof formSchema>;
 export const Form = () => {
+  const { setName } = useContext(NameContext) ?? {};
+  const submitData = (data: FormSchema) => {
+    console.log("Data: ", data);
+    setName?.(data.firstName);
+  };
   const {
     register,
     handleSubmit,
