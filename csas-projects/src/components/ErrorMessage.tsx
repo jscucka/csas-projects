@@ -1,4 +1,5 @@
-import { StyledErrorMessage } from "./styles/ErrorMessage.styled";
+import { StyledErrorMessage } from './styles/ErrorMessage.styled';
+import React from 'react';
 interface ErrorMessageProps {
   message: string | undefined;
 }

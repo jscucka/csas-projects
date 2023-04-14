@@ -3,20 +3,20 @@ import {
   StyledLabel,
   StyledInput,
   StyledButton,
-} from "./styles/Form.styled";
-import { Container } from "./styles/Container.styled";
-import { z } from "zod";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { ErrorMessage } from "./ErrorMessage";
-import { formSchema } from "../utils/formSchema";
-import { NameContext } from "./context/NameContext";
-import { useContext } from "react";
+} from './styles/Form.styled';
+import { Container } from './styles/Container.styled';
+import { z } from 'zod';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { ErrorMessage } from './ErrorMessage';
+import { formSchema } from '../utils/formSchema';
+import { NameContext } from './context/NameContext';
+import React, { useContext } from 'react';
 type FormSchema = z.infer<typeof formSchema>;
 export const Form = () => {
   const { setName } = useContext(NameContext) ?? {};
   const submitData = (data: FormSchema) => {
-    console.log("Data: ", data);
+    console.log('Data: ', data);
     setName?.(data.firstName);
   };
   const {
@@ -34,7 +34,7 @@ export const Form = () => {
           type="text"
           id="first-name"
           hasError={!!errors.firstName}
-          {...register("firstName")}
+          {...register('firstName')}
         />
         {errors.firstName && (
           <ErrorMessage message={errors.firstName.message?.toString()} />
@@ -45,7 +45,7 @@ export const Form = () => {
           type="text"
           id="last-name"
           hasError={!!errors.lastName}
-          {...register("lastName")}
+          {...register('lastName')}
         />
         {errors.lastName && (
           <ErrorMessage message={errors.lastName.message?.toString()} />
@@ -56,7 +56,7 @@ export const Form = () => {
           type="number"
           id="age"
           hasError={!!errors.age}
-          {...register("age", { valueAsNumber: true })}
+          {...register('age', { valueAsNumber: true })}
         />
         {errors.age && (
           <ErrorMessage message={errors.age.message?.toString()} />
@@ -67,7 +67,7 @@ export const Form = () => {
           type="email"
           id="email"
           hasError={!!errors.email}
-          {...register("email")}
+          {...register('email')}
         />
         {errors.email && (
           <ErrorMessage message={errors.email.message?.toString()} />
@@ -78,7 +78,7 @@ export const Form = () => {
           type="password"
           id="password"
           hasError={!!errors.password}
-          {...register("password")}
+          {...register('password')}
         />
         {errors.password && (
           <ErrorMessage message={errors.password.message?.toString()} />
@@ -89,7 +89,7 @@ export const Form = () => {
           type="password"
           id="confirmPassword"
           hasError={!!errors.confirmPassword}
-          {...register("confirmPassword")}
+          {...register('confirmPassword')}
         />
         {errors.confirmPassword && (
           <ErrorMessage message={errors.confirmPassword.message?.toString()} />
