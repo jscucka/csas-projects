@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useState } from "react";
+import React, { ReactNode, createContext, useState } from 'react';
 export interface INameContext {
   name: string;
   setName: (name: string) => void;
@@ -10,7 +10,7 @@ type NameContextProviderProps = {
 export const NameContext = createContext<INameContext | undefined>(undefined);
 
 export const NameContextProvider = ({ children }: NameContextProviderProps) => {
-  const [name, setName] = useState("Láďa");
+  const [name, setName] = useState('Láďa');
 
   const value = {
     name,

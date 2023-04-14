@@ -1,10 +1,11 @@
-import { Route, Routes } from "react-router-dom";
-import { Home } from "./pages/Home";
-import { FormPage } from "./pages/FormPage";
-import { GlobalStyles } from "./components/styles/GlobalStyles";
-import { NavBar } from "./components/NavBar";
-import { Container } from "./components/styles/Container.styled";
-import { NameContextProvider } from "./components/context/NameContext";
+import { Route, Routes } from 'react-router-dom';
+import { Home } from './pages/Home';
+import { FormPage } from './pages/FormPage';
+import { GlobalStyles } from './components/styles/GlobalStyles';
+import { NavBar } from './components/NavBar';
+import { Container } from './components/styles/Container.styled';
+import { NameContextProvider } from './components/context/NameContext';
+import React from 'react';
 function App() {
   return (
     <>
